@@ -1,0 +1,65 @@
+{
+  "name": "react-matcher",
+  "version": "1.0.0",
+  "description": "Pattern matching component for react",
+  "jsnext:main": "dist/react-matcher.es.js",
+  "module": "dist/react-matcher.es.js",
+  "main": "dist/react-matcher.js",
+  "umd:main": "dist/react-matcher.umd.js",
+  "scripts": {
+    "build": "npm-run-all clean -p rollup -p minify:* -s",
+    "test": "jest --watch",
+    "rollup": "rollup -c",
+    "minify:cjs": "uglifyjs $npm_package_main -cm toplevel -o $npm_package_main -p relative --in-source-map ${npm_package_main}.map --source-map ${npm_package_main}.map",
+    "minify:umd": "uglifyjs $npm_package_umd_main -cm -o $npm_package_umd_main -p relative --in-source-map ${npm_package_umd_main}.map --source-map ${npm_package_umd_main}.map",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "react",
+    "pattern",
+    "match",
+    "condition"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ],
+  "author": "Evgeniy Kazakov <evgeniy.kazakov@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ekazakov/react-matcher#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekazakov/react-matcher.git"
+  },
+  "peerDependencies": {
+    "react": "",
+    "lodash": "",
+    "lodash-es": "",
+    "prop-types": ""
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "jest": "^21.2.1",
+    "jest-enzyme": "^4.0.1",
+    "lodash": "^4.17.4",
+    "lodash-es": "^4.17.4",
+    "npm-run-all": "^4.1.2",
+    "prop-types": "^15.6.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.51.5",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "uglify-js": "^2.8.23"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js"
+  }
+}
